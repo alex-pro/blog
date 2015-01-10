@@ -1,0 +1,7 @@
+<% @trash.each do |trash| %>
+<%= trash.subject %> | <%= link_to "Untrash", untrash_conversation_path(trash.id), method: :post %><br>
+<% end %>
+<div class="btn-group" role="group">
+  <%= link_to "Back to conversations", conversations_path, class: :"btn btn-default" %>
+  <%= link_to "Empty Trash", empty_trash_conversations_path, method: :post, data: {confirm: 'Are you sure?'}, class: :"btn btn-danger" %>
+</div>

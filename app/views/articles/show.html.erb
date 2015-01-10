@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+  <table class="table">
+    <tr>
+      <th>Author</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Comments_count</th>
+      <th colspan="3"></th>
+    </tr>
+    <tr>
+      <td><%= @article.user.email %></td>
+      <td><%= @article.title %></td>
+      <td><%= @article.description %></td>
+      <td><%= @article.comments.count %></td>
+    </tr>
+  </table>
+</div>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+<div class="btn-group">
+  <%= link_to 'Edit Article', edit_article_path(@article), class: :"btn btn-info"%>
+  <%= link_to 'Back to Articles', articles_path, class: :"btn btn-default" %>
+</div>

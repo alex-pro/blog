@@ -1,0 +1,22 @@
+<div class="container center">
+  <h1>Sign Up</h1>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <% @user.errors.full_messages.each do |message| %>
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          <%= message %><br>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="form-horizontal">
+      <div class="form-group">
+        <p><%= f.text_field :email, class: :"form-control", placeholder: :"Email" %></p>
+        <p><%= f.text_field :password, class: :"form-control", placeholder: :"Password" %></p>
+        <p><%= f.text_field :password_confirmation, class: :"form-control", placeholder: :"Password confirmation" %></p>
+        <%= f.submit "Sign up", class: :"btn btn-info form-control" %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,27 @@
+<table>
+  <tr>Name: <%= @profile.name %></tr><br>
+  <tr>Country: <%= @profile.country %></tr><br>
+  <tr>Birthday: <%= @profile.birthday %></tr><br>
+  <tr>Sex: <%= @profile.sex %></tr><br>
+  <tr>About: <%= @profile.about %></tr><br>
+  <tr colspan="3"></tr>
+</table>
+
+<h2>Friends</h2>
+<ul>
+  <% @user.friendships.each do |friendship| %>
+    <li>
+      <%= friendship.friend.email %>
+      <% if can_user(friendship) %>
+        (<%= link_to "remove", friendship, method: :delete %>)
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Friended by Users</h2>
+<ul>
+  <% @user.inverse_friends.each do |user| %>
+    <li><%= user.email %></li>
+  <% end %>
+</ul>
