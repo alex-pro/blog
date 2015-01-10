@@ -1,87 +1,15 @@
-$(document).ready(function(){
-  $('a#article').click(function(e) {
-    e.preventDefault();
-    $('div#divarticle').fadeIn();
-    $('div#divuser').hide();
-    $('div#divconversation').hide();
-    $('div#divmessage').hide();
-    return false;
-  });
+$(document).ready(function() {
+  $('.body div').hide();
+  var li = $('.navbar .nav.navbar-nav li');
 
-  $('a#user').click(function(e) {
-    e.preventDefault();
-    $('div#divarticle').hide();
-    $('div#divuser').fadeIn();
-    $('div#divconversation').hide();
-    $('div#divmessage').hide();
-    return false;
-  });
+  li.on('click', function() {
+    li.removeClass('active');
+    $(this).addClass('active');
 
-  $('a#conversation').click(function(e) {
-    e.preventDefault();
-    $('div#divarticle').hide();
-    $('div#divuser').hide();
-    $('div#divconversation').fadeIn();
-    $('div#divmessage').hide();
-    return false;
-  });
+    var link = $(this).find('a');
+    var id = link.data('div-id');
 
-  $('a#message').click(function(e) {
-    e.preventDefault();
-    $('div#divarticle').hide();
-    $('div#divuser').hide();
-    $('div#divconversation').hide();
-    $('div#divmessage').fadeIn();
-    return false;
-  });
-
-  $('.nav li a').on('click', function(e){
-    e.preventDefault();
-    var $thisLi = $(this).parent('li');
-    var $ul = $thisLi.parent('ul');
-    $.get('/articles/');
-    if (!$thisLi.hasClass('active'))
-      {
-        $ul.find('li.active').removeClass('active');
-        $thisLi.addClass('active');
-      }
-  });
+    $('.body div').hide();
+    $('.body div#' + id).fadeIn(1000);
+  })
 })
-
-$(document).ready(function(){
-  $('a#article').click(function(e) {
-    e.preventDefault();
-    $('div#divarticle').fadeIn();
-    $('div#divuser').hide();
-    $('div#divconversation').hide();
-    $('div#divmessage').hide();
-    return false;
-  });
-
-  $('a#user').click(function(e) {
-    e.preventDefault();
-    $('div#divarticle').hide();
-    $('div#divuser').fadeIn();
-    $('div#divconversation').hide();
-    $('div#divmessage').hide();
-    return false;
-  });
-
-  $('a#conversation').click(function(e) {
-    e.preventDefault();
-    $('div#divarticle').hide();
-    $('div#divuser').hide();
-    $('div#divconversation').fadeIn();
-    $('div#divmessage').hide();
-    return false;
-  });
-
-  $('a#message').click(function(e) {
-    e.preventDefault();
-    $('div#divarticle').hide();
-    $('div#divuser').hide();
-    $('div#divconversation').hide();
-    $('div#divmessage').fadeIn();
-    return false;
-  });
-});

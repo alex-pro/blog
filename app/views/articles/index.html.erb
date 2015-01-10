@@ -1,26 +1,28 @@
 <div class="navbar navbar-default navbar-right">
   <ul class="nav navbar-nav">
-    <li><%= link_to "Articles", nil, id: :'article' %></li>
-    <li><%= link_to "Users", nil, id: :'user' %></li>
-    <li><%= link_to "Conversations", nil, id: :'conversation' %></li>
-    <li><%= link_to "New message", nil, id: :'message' %></li>
+    <li><a href='#' data-div-id='article'>Articles</a></li>
+    <li><a href='#' data-div-id='user'>Users</a></li>
+    <li><a href='#' data-div-id='conversation'>Conversations</a></li>
+    <li><a href='#' data-div-id='message'>New message</a></li>
   </ul>
 </div>
 
-<div id="divarticle" hidden>
-  <p>This is article page</p>
-</div>
+<div class='body'>
+  <div id="article">
+    <p>This is article page</p>
+  </div>
 
-<div id="divuser" hidden>
-  <p>This is user page</p>
-</div>
+  <div id="user">
+    <p>This is user page</p>
+  </div>
 
-<div id="divconversation" hidden>
-  <p>This is conversation page</p>
-</div>
+  <div id="conversation">
+    <p>This is conversation page</p>
+  </div>
 
-<div id="divmessage" hidden>
-  <p>This is message page</p>
+  <div id="message">
+    <p>This is message page</p>
+  </div>
 </div>
 
 <h1>Listing Articles</h1>
