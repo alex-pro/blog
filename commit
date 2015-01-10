@@ -1,0 +1,6 @@
+#!/bin/bash         
+git init
+git add .
+git commit -m 'First commit'
+git remote add origin https://github.com/alex-pro/blog.git
+git push origin master
