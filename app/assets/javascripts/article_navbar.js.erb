@@ -11,5 +11,16 @@ $(document).ready(function() {
 
     $('.body div').hide();
     $('.body div#' + id).fadeIn(1000);
+
+    if(id == 'new-string'){
+      $('.body div#new-string').dialog({
+        modal: true,
+        width: 400,
+      }) }
+  })
+
+  $('#submit-string').on('click', function(){
+    var string = $('#edit-string').val()
+    $('.body div#result-string').html(string).fadeIn(1000);
   })
 })
