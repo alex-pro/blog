@@ -4,7 +4,7 @@
     <li><a href='#' data-div-id='user'>Users</a></li>
     <li><a href='#' data-div-id='conversation'>Conversations</a></li>
     <li><a href='#' data-div-id='message'>New message</a></li>
-    <li><a href='#' data-div-id='new-string'>New string</a></li>
+    <li><a href='#' data-toggle="modal" data-target="#myModal">Modal form</a></li>
   </ul>
 </div>
 
@@ -25,12 +25,25 @@
     <p>This is message page</p>
   </div>
 
-  <div id="new-string">
-    <p><input type="text" id="edit-string" class="form-control" placeholder="input text..."><p>
-    <button type="submit" id="submit-string" class="btn btn-info form-control">Create string</button>
-  </div>
-
   <div id="result-string"></div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Write new string</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="edit-string" class="form-control" placeholder="input text...">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" id="submit-string" class="btn btn-primary">Save on the page</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <h1>Listing Articles</h1>
