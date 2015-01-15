@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '4.1.8'
-gem 'mysql2'
+#gem 'mysql2'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
@@ -23,3 +23,8 @@ group :assets do
 end
 gem 'jquery-ui-rails'
 gem 'bootstrap-kaminari-views'
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+gem 'mysql2', group: :development
