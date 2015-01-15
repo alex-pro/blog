@@ -3,12 +3,13 @@ class ArticlesController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @search = Article.search do
-      fulltext params[:search]
-      order_by sort_column, sort_direction
-      paginate :page => params[:page], :per_page => 5
-    end
-    @articles = @search.results
+    #@search = Article.search do
+    #fulltext params[:search]
+    #order_by sort_column, sort_direction
+    #paginate :page => params[:page], :per_page => 5
+    #end
+    #@articles = @search.results
+    @articles = Article.order(sort_column + " " + sort_direction).page(params[:page]).per(5)
   end
 
   def show
