@@ -1,14 +1,16 @@
 <h1>Your profile</h1>
 <%= form_for @profile, as: :profile, url: profile_path(@profile), method: :put do |f| %>
-  <div class="form-horizontal">
-    <div class="form-group">
-      <div class="col-sm-3">
-        <p>Name: <%= f.text_field :name, class: :"form-control" %></p>
-        <p>Country: <%= select(:profile, :country, Profile::COUNTRIES) %></p>
-        <p>Birthday (yyyy-mm-dd): <%= f.text_field :birthday, class: :"form-control" %></p>
-        <p>Sex: <%= select(:profile, :sex, Profile::SEX) %></p>
-        <p>About: <%= f.text_area :about, class: :"form-control" %></p>
-        <%= f.submit "Update", class: :"btn btn-primary form-control" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <p>Name: <%= f.text_field :name, class: :"form-control" %></p>
+          <p>Country: <%= select(:profile, :country, Profile::COUNTRIES) %></p>
+          <p>Birthday: <%= f.text_field :birthday, class: :'datepicker' %></p>
+          <p>Sex: <%= select(:profile, :sex, Profile::SEX) %></p>
+          <p>About: <%= f.text_area :about, class: :"form-control" %></p>
+          <%= f.submit "Update", class: :"btn btn-primary form-control" %>
+        </div>
       </div>
     </div>
   </div>
