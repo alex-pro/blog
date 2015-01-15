@@ -1,5 +1,5 @@
 <% @messages.each do |message| %>
-  <%= message.recipients.last.email %> written:
+  <%= User.find(message.sender_id).email %> written:
   <%= message.body %><br><br>
 <% end %>
 <%= render 'messages/form' %>
