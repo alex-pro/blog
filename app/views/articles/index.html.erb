@@ -49,11 +49,8 @@
 <h1>Listing Articles</h1>
 <%= form_tag articles_path, method: :get, id: 'articles_search' do %>
  <% render 'search' %>
-  <% render 'search' %>
 <% end %>
-<!-- %= form_tag articles_path, method: :get, id: 'articles_search' do %> -->
- <!-- % render 'search' %> -->
-<!-- % end %> -->
+
 <% if current_user %>
   <h3><%= link_to 'New article', new_article_path, class: :"label label-primary" %></h3>
 <% end %>

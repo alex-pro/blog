@@ -52,8 +52,9 @@ $.UsersAutocomplete = {
 
 $(document).ready(function() { $.UsersAutocomplete.init() });
 $(document).on('page:load', $.UsersAutocomplete.init);
+$(document).on('page:load', initCallback);
 
-$(document).ready(function(){
-  $('.datepicker').datepicker()
+$(document).on('ready page:change', function() {
+  $('.datepicker').datepicker({
+  });
 });
-$(document).on('page:load', $.UsersAutocomplete.init());
