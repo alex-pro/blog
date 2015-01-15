@@ -1,0 +1,80 @@
+<div class="navbar navbar-default navbar-right">
+  <ul class="nav navbar-nav">
+    <li><a href='#' data-div-id='article'>Articles</a></li>
+    <li><a href='#' data-div-id='user'>Users</a></li>
+    <li><a href='#' data-div-id='conversation'>Conversations</a></li>
+    <li><a href='#' data-div-id='message'>New message</a></li>
+    <li><a href='#' data-toggle="modal" data-target="#myModal">Modal form</a></li>
+  </ul>
+</div>
+
+<div class='body'>
+  <div id="article">
+    <p>This is article page</p>
+  </div>
+
+  <div id="user">
+    <p>This is user page</p>
+  </div>
+
+  <div id="conversation">
+    <p>This is conversation page</p>
+  </div>
+
+  <div id="message">
+    <p>This is message page</p>
+  </div>
+
+  <div id="result-string"></div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Write new string</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="edit-string" class="form-control" placeholder="input text...">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" id="submit-string" class="btn btn-primary">Save on the page</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Listing Articles</h1>
+<%= form_tag articles_path, method: :get, id: 'articles_search' do %>
+  <% render 'search' %>
+<% end %>
+<% if current_user %>
+  <h3><%= link_to 'New article', new_article_path, class: :"label label-primary" %></h3>
+<% end %>
+<table>
+  <tr>
+    <th> <%= sortable "user_id", "Sort by author" %> | </th>
+    <th> <%= sortable "title", "Sort by title" %> | </th>
+    <th> <%= sortable "description", "Sort by description" %> | </th>
+  </tr>
+</table>
+<% @articles.each do |article| %>
+  <div class="row">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3><%= article.title %></h3>
+        <p><%= article.description %></p>
+        <p><%= link_to 'Show', article_path(article), class: :"btn btn-info" %>
+        <% if can_user(article) %>
+          <%= link_to 'Edit', edit_article_path(article), class: :"btn btn-default" %>
+          <%= link_to 'Destroy', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class: :"btn btn-danger" %>
+        <% end %>
+        <p>Written by <%= link_to article.user.email, profile_path(article.user_id), method: :get %></p>
+        <p>Comments count <span class="badge"><%= article.comments.count %></span></p>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= paginate @articles %>

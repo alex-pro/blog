@@ -1,0 +1,13 @@
+<h1>New message</h1>
+<%= form_tag messages_path, method: :post do %>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <div class="col-sm-6">
+        <p>Email: <%= text_field_tag :email, nil, id: 'tokenfield', class: 'form-control', autocomplete: false %></p>
+        <p><%= hidden_field_tag :users_ids, nil, id: 'users_ids' %></p>
+        <p>Body: <%= text_area_tag :body, nil, class: 'form-control' %></p>
+        <%= submit_tag "Send message", class: "btn btn-primary form-control" %>
+      </div>
+    </div>
+  </div>
+<% end %>

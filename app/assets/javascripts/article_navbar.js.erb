@@ -1,0 +1,20 @@
+$(document).ready(function() {
+  $('.body div').hide();
+  var li = $('.navbar .nav.navbar-nav li');
+
+  li.on('click', function() {
+    li.removeClass('active');
+    $(this).addClass('active');
+
+    var link = $(this).find('a');
+    var id = link.data('div-id');
+
+    $('.body div').hide();
+    $('.body div#' + id).fadeIn(1000);
+  });
+
+  $('#submit-string').on('click', function() {
+    var string = $('#edit-string').val();
+    $('#result-string').html(string).fadeIn(1000);
+  })
+});

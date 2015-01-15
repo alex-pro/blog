@@ -1,0 +1,14 @@
+<h3><%= link_to "See your Trash", trashbin_conversations_path, method: :get, class: :"label label-info" %></h3>
+<ul>
+  <% @conversations.each do |conversation| %>
+    <div class="panel panel-info">
+      <div class="panel-body">
+        <%= link_to conversation.messages.last.body, conversation_path(conversation.id), method: :get %>
+      </div>
+      <div class="panel-footer">
+        <%= conversation.updated_at.strftime("%a, %m/%e/%Y %I:%M %p") %>
+      </div>
+      <%= link_to "Move to Trash", trash_conversation_path(conversation.id), method: :post, class: :'btn btn-warning form-control' %>
+    </div>
+  <% end %>
+</ul>
