@@ -5,6 +5,7 @@
 //= require turbolinks
 //= require bootstrap-tokenfield.min
 //= require twitter/typeahead.min
+//= require bootstrap-datetimepicker
 //= require_tree .
 
 Turbolinks.enableTransitionCache();
@@ -49,12 +50,12 @@ $.UsersAutocomplete = {
     $('.typeahead.input-lg').siblings('input.tt-hint').addClass('hint-large');
   }
 }
+$(function() {
+  $('#datetimepicker').datetimepicker({
+    pickTime: false
+  });
+});
 
 $(document).ready(function() { $.UsersAutocomplete.init() });
 $(document).on('page:load', $.UsersAutocomplete.init);
 $(document).on('page:load', initCallback);
-
-$(document).on('ready page:change', function() {
-  $('.datepicker').datepicker({
-  });
-});
