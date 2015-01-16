@@ -48,13 +48,13 @@ $.UsersAutocomplete = {
 
     $('.typeahead.input-sm').siblings('input.tt-hint').addClass('hint-small');
     $('.typeahead.input-lg').siblings('input.tt-hint').addClass('hint-large');
+    $(function() {
+      $('#datetimepicker').datetimepicker({
+      });
+    });
   }
 }
-$(function() {
-  $('#datetimepicker').datetimepicker({
-    pickTime: false
-  });
-});
+
 
 $(document).ready(function() { $.UsersAutocomplete.init() });
 $(document).on('page:load', $.UsersAutocomplete.init);
