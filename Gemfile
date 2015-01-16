@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 gem 'rails', '4.1.8'
-#gem 'mysql2'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
@@ -28,3 +27,4 @@ group :production do
   gem 'rails_12factor'
 end
 gem 'mysql2', group: :development
+gem 'bootstrap-datetimepicker-rails'
