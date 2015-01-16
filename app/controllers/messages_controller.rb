@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    users_ids = params[:users_ids].split(',').map(&:to_i)
+    users_ids = params[:users_ids].split(',').map(&:to_i).uniq
     users_ids.delete(current_user.id)
     key = users_ids.push(current_user.id).sort.join('-')
     conversation = mailbox.conversations.find_by_subject(key)
