@@ -4,13 +4,13 @@ class Article < ActiveRecord::Base
   validates :title, presence: true,
     length: { minimum: 5 }
 
-  searchable do
-    string :title
-    text :title
-    integer :user_id
-    string :description
-    text :description
-  end
+  #searchable do
+    #string :title
+    #text :title
+    #integer :user_id
+    #string :description
+    #text :description
+  #end
 
   #def self.search(search)
     #if search
