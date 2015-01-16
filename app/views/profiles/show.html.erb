@@ -7,7 +7,7 @@
   <tr colspan="3"></tr>
 </table>
 
-<h2>Friends</h2>
+<h2>Has friends</h2>
 <ul>
   <% @user.friendships.each do |friendship| %>
     <li>
@@ -19,7 +19,7 @@
   <% end %>
 </ul>
 
-<h2>Friended by Users</h2>
+<h2>Added to friends</h2>
 <ul>
   <% @user.inverse_friends.each do |user| %>
     <li><%= user.email %></li>
