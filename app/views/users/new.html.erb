@@ -13,8 +13,8 @@
     <div class="form-horizontal">
       <div class="form-group">
         <p><%= f.text_field :email, class: :"form-control", placeholder: :"Email" %></p>
-        <p><%= f.text_field :password, class: :"form-control", placeholder: :"Password" %></p>
-        <p><%= f.text_field :password_confirmation, class: :"form-control", placeholder: :"Password confirmation" %></p>
+        <p><%= f.password_field :password, class: :"form-control", placeholder: :"Password" %></p>
+        <p><%= f.password_field :password_confirmation, class: :"form-control", placeholder: :"Password confirmation" %></p>
         <%= f.submit "Sign up", class: :"btn btn-info form-control" %>
       </div>
     </div>
