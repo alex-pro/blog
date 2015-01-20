@@ -28,3 +28,5 @@ group :production do
 end
 gem 'mysql2', group: :development
 gem 'bootstrap-datetimepicker-rails'
+gem "private_pub"
+gem "thin"

@@ -1,4 +1,5 @@
 //= require jquery
+//= require private_pub
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap-sprockets
@@ -58,4 +59,3 @@ $.UsersAutocomplete = {
 
 $(document).ready(function() { $.UsersAutocomplete.init() });
 $(document).on('page:load', $.UsersAutocomplete.init);
-$(document).on('page:load', initCallback);

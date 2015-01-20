@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_filter :authenticate
+
   def new
     @message = current_user.messages.new
   end
