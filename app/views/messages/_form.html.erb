@@ -1,10 +1,14 @@
-<%= form_for :message, url: reply_conversation_path, method: :post, remote: true do |f| %>
-  <div class="row">
-    <div class="input-group">
-      <%= f.text_field :body, class: :"form-control" %>
-      <span class="input-group-btn">
-        <%= f.submit "Send Message", class: 'btn btn-primary' %>
-      </span>
-    </div>
-  </div><br><br>
-<% end %>
+<div class="navbar navbar-fixed-bottom">
+  <div class="container">
+    <%= form_for :message, url: reply_conversation_path, method: :post, remote: true do |f| %>
+      <div class="row">
+        <div class="input-group">
+          <%= f.text_field :body, class: :"form-control" %>
+          <span class="input-group-btn">
+            <%= f.submit "Send Message", class: 'btn btn-primary' %>
+          </span>
+        </div>
+      </div><br><br>
+    <% end %>
+  </div>
+</div>
