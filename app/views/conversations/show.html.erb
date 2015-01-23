@@ -1,9 +1,5 @@
 <ul id="chat">
-  <% @messages.each do |message| %>
-    <%= message.updated_at %>
-    <%= User.find(message.sender_id).email %> written:
-    <%= message.body %><br><br>
-  <% end %>
+  <%= render 'message' %>
 </ul>
 <%= render 'messages/form' %>
 <%= subscribe_to "/messages/new"  %>

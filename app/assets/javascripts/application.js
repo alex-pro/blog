@@ -1,5 +1,4 @@
 //= require jquery
-//= require private_pub
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap-sprockets
@@ -7,6 +6,7 @@
 //= require bootstrap-tokenfield.min
 //= require twitter/typeahead.min
 //= require bootstrap-datetimepicker
+//= require private_pub
 //= require_tree .
 
 Turbolinks.enableTransitionCache();

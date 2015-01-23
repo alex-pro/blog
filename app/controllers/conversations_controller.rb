@@ -13,9 +13,9 @@ class ConversationsController < ApplicationController
 
   def reply
     current_user.reply_to_conversation(conversation, params[:message][:body])
-    @message = current_user.messages.new
-    @message.body = params[:message][:body]
-    redirect_to conversation_path
+    if (params[:message][:body] != "")
+      @message = current_user.mailbox.conversations.find_by_id(params[:id]).messages.last
+    end
   end
 
   def trashbin

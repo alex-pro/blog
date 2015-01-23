@@ -1,8 +1,10 @@
-Reply:
 <%= form_for :message, url: reply_conversation_path, method: :post, remote: true do |f| %>
-  <%= f.text_area :body, class: :"form-control" %><br>
-  <div class="btn-group" role="group">
-    <%= f.submit "Send Message", class: 'btn btn-default' %>
-    <%= submit_tag 'Clear Reply Box', type: :reset, class: 'btn btn-danger' %>
-  </div>
+  <div class="row">
+    <div class="input-group">
+      <%= f.text_field :body, class: :"form-control" %>
+      <span class="input-group-btn">
+        <%= f.submit "Send Message", class: 'btn btn-primary' %>
+      </span>
+    </div>
+  </div><br><br>
 <% end %>
