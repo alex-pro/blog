@@ -1,32 +1,36 @@
 source 'https://rubygems.org'
-gem 'rails', '4.1.8'
+ruby '2.3.1'
+
+gem 'rails', '~> 5.0.0.rc1'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'jbuilder'
+gem 'sdoc'
 gem 'pry'
-gem 'spring',        group: :development
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'table_print'
-gem 'kaminari', '~> 0.16.1'
+gem 'kaminari'
 gem 'mailboxer'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'twitter-typeahead-rails'
+gem 'jquery-ui-rails'
+gem 'bootstrap-kaminari-views'
+gem 'bootstrap-datetimepicker-rails'
+gem "private_pub"
+
+gem 'spring',        group: :development
+gem 'mysql2', group: :development
+
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
 end
-gem 'jquery-ui-rails'
-gem 'bootstrap-kaminari-views'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-gem 'mysql2', group: :development
-gem 'bootstrap-datetimepicker-rails'
-gem "private_pub"
-gem "thin"

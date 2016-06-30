@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  acts_as_messageable
-
   has_many :articles
 
   has_many :friendships
